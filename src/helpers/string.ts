@@ -96,7 +96,7 @@ export const htmlToJson = (html: any) => {
           img.push(imgs);
         }
       } else {
-        if (Array.isArray(item.props.children)) {
+        if (Array.isArray(item.props?.children)) {
           item.props.children.map(child => {
             if (child.type === 'img') {
               const imgs = child.props.src;
@@ -113,7 +113,7 @@ export const htmlToJson = (html: any) => {
           } else {
             if (typeof item.props?.children === 'string')
               text += item.props.children;
-            else text += item.props.children.props.children;
+            else text += item.props?.children?.props?.children;
           }
         }
       }

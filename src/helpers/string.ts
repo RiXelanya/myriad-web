@@ -111,7 +111,7 @@ export const htmlToJson = (html: any) => {
             const imgs = item.props.children.src;
             img.push(imgs);
           } else {
-            if (typeof item.props.children === 'string')
+            if (typeof item.props?.children === 'string')
               text += item.props.children;
             else text += item.props.children.props.children;
           }

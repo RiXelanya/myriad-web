@@ -50,7 +50,9 @@ export const Menu: React.FC<MenuProps> = props => {
   const [cookies] = useCookies([COOKIE_INSTANCE_URL]);
 
   const openMenu = (item: MenuDetail) => () => {
-    if (router.pathname === '/' && router.query?.type !== 'all') {onChange(item.url);}
+    if (router.pathname === '/' && router.query?.type !== 'all') {
+      onChange(item.url);
+    }
     if (router.pathname === item.url) return;
     if (anonymous && item.url === '/friends') {
       confirm({
